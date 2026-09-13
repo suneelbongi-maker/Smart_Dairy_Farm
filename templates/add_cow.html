@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Cow</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🐄 Add New Cow</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/cows">Cows</a>
+
+</nav>
+
+
+<main>
+
+    <div class="form-container">
+
+        <h2>Cow Details</h2>
+
+        <form method="POST">
+
+            <label>Cow ID</label>
+
+            <input
+                type="text"
+                name="id"
+                required
+            >
+
+
+            <label>Cow Name</label>
+
+            <input
+                type="text"
+                name="name"
+                required
+            >
+
+
+            <label>Breed</label>
+
+            <input
+                type="text"
+                name="breed"
+                required
+            >
+
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                name="age"
+                required
+            >
+
+
+            <label>Health Status</label>
+
+            <select name="health">
+
+                <option>Healthy</option>
+
+                <option>Needs Checkup</option>
+
+                <option>Under Treatment</option>
+
+            </select>
+
+
+            <button type="submit">
+                Add Cow
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

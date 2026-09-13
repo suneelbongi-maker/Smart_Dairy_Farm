@@ -1,0 +1,52 @@
+[
+    {
+        "id": "C001",
+        "name": "Lakshmi",
+        "breed": "Jersey",
+        "age": "4",
+        "gender": "Female",
+        "weight": 420,
+        "date_added": "2026-09-01",
+        "health": "Healthy"
+    },
+    {
+        "id": "C002",
+        "name": "Ganga",
+        "breed": "Holstein Friesian",
+        "age": "5",
+        "gender": "Female",
+        "weight": 450,
+        "date_added": "2026-09-02",
+        "health": "Needs Checkup"
+    },
+    {
+        "id": "C003",
+        "name": "Radha",
+        "breed": "Jersey",
+        "age": "3",
+        "gender": "Female",
+        "weight": 390,
+        "date_added": "2026-09-03",
+        "health": "Healthy"
+    },
+    {
+        "id": "C004",
+        "name": "Sita",
+        "breed": "Gir",
+        "age": "6",
+        "gender": "Female",
+        "weight": 430,
+        "date_added": "2026-09-04",
+        "health": "Under Treatment"
+    },
+    {
+        "id": "C005",
+        "name": "Kamadhenu",
+        "breed": "Holstein Friesian",
+        "age": "4",
+        "gender": "Female",
+        "weight": 460,
+        "date_added": "2026-09-05",
+        "health": "Healthy"
+    }
+]

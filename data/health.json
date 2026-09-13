@@ -1,0 +1,10 @@
+[
+    {
+        "cow_id": "C001",
+        "date": "2026-09-13",
+        "condition": "Needs Checkup",
+        "temperature": "5.4",
+        "treatment": "pregranant",
+        "next_checkup": "2026-09-15"
+    }
+]

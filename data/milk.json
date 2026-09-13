@@ -1,0 +1,44 @@
+[
+    {
+        "cow_id": "C001",
+        "date": "2026-09-13",
+        "morning": 8,
+        "evening": 7,
+        "total": 15
+    },
+    {
+        "cow_id": "C002",
+        "date": "2026-09-13",
+        "morning": 10,
+        "evening": 8,
+        "total": 18
+    },
+    {
+        "cow_id": "C003",
+        "date": "2026-09-13",
+        "morning": 7,
+        "evening": 6,
+        "total": 13
+    },
+    {
+        "cow_id": "C004",
+        "date": "2026-09-13",
+        "morning": 9,
+        "evening": 7,
+        "total": 16
+    },
+    {
+        "cow_id": "C005",
+        "date": "2026-09-13",
+        "morning": 11,
+        "evening": 9,
+        "total": 20
+    },
+    {
+        "cow_id": "C001",
+        "date": "2026-09-13",
+        "morning": 6.0,
+        "evening": 9.0,
+        "total_milk": 15.0
+    }
+]

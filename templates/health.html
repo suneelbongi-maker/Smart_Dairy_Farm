@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Health Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>💊 Cow Health Management</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/cows">Cows</a>
+    <a href="/milk">Milk</a>
+    <a href="/health">Health</a>
+    <a href="/feed">Feed</a>
+    <a href="/sales">Sales</a>
+
+</nav>
+
+
+<main>
+
+    <div class="page-title">
+
+        <h2>Health Records</h2>
+
+        <a class="button" href="/add_health">
+            + Add Health Record
+        </a>
+
+    </div>
+
+
+    <table>
+
+        <tr>
+
+            <th>Cow ID</th>
+            <th>Date</th>
+            <th>Condition</th>
+            <th>Temperature</th>
+            <th>Treatment</th>
+            <th>Next Checkup</th>
+
+        </tr>
+
+
+        {% for item in health %}
+
+        <tr>
+
+            <td>{{ item.cow_id }}</td>
+
+            <td>{{ item.date }}</td>
+
+            <td>
+
+                {% if item.condition == "Healthy" %}
+
+                    🟢 Healthy
+
+                {% elif item.condition == "Needs Checkup" %}
+
+                    🟡 Needs Checkup
+
+                {% else %}
+
+                    🔴 Under Treatment
+
+                {% endif %}
+
+            </td>
+
+            <td>
+                {{ item.temperature }} °C
+            </td>
+
+            <td>
+                {{ item.treatment }}
+            </td>
+
+            <td>
+                {{ item.next_checkup }}
+            </td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+            <td colspan="6">
+                No health records found.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</main>
+
+</body>
+
+</html>

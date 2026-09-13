@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Feed Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌾 Feed Management</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/cows">Cows</a>
+    <a href="/milk">Milk</a>
+    <a href="/health">Health</a>
+    <a href="/feed">Feed</a>
+    <a href="/sales">Sales</a>
+
+</nav>
+
+
+<main>
+
+    <div class="page-title">
+
+        <h2>Feed Records</h2>
+
+        <a class="button" href="/add_feed">
+            + Add Feed
+        </a>
+
+    </div>
+
+
+    <table>
+
+        <tr>
+
+            <th>Feed Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
+
+        </tr>
+
+
+        {% for item in feed %}
+
+        <tr>
+
+            <td>{{ item.name }}</td>
+
+            <td>{{ item.quantity }} kg</td>
+
+            <td>₹{{ item.price }}</td>
+
+            <td>{{ item.date }}</td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+            <td colspan="4">
+                No feed records found.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</main>
+
+</body>
+
+</html>

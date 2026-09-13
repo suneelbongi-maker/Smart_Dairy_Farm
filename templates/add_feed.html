@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Feed</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌾 Add Feed</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/feed">Feed</a>
+
+</nav>
+
+
+<main>
+
+    <div class="form-container">
+
+        <h2>Feed Information</h2>
+
+        <form method="POST">
+
+            <label>Feed Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Example: Grass"
+                required
+            >
+
+
+            <label>Quantity (kg)</label>
+
+            <input
+                type="number"
+                step="0.1"
+                name="quantity"
+                required
+            >
+
+
+            <label>Price (₹)</label>
+
+            <input
+                type="number"
+                step="0.01"
+                name="price"
+                required
+            >
+
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+
+            <button type="submit">
+                Save Feed
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

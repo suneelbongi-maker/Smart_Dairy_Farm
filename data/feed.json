@@ -1,0 +1,38 @@
+[
+    {
+        "feed_name": "Green Grass",
+        "quantity": 100,
+        "price": 2000,
+        "date": "2026-09-13"
+    },
+    {
+        "feed_name": "Dry Hay",
+        "quantity": 50,
+        "price": 1500,
+        "date": "2026-09-13"
+    },
+    {
+        "feed_name": "Cattle Feed",
+        "quantity": 40,
+        "price": 2200,
+        "date": "2026-09-13"
+    },
+    {
+        "feed_name": "Mineral Mix",
+        "quantity": 10,
+        "price": 800,
+        "date": "2026-09-13"
+    },
+    {
+        "name": "grass",
+        "quantity": "50",
+        "price": "600",
+        "date": "2026-09-13"
+    },
+    {
+        "name": "gaddi",
+        "quantity": "56",
+        "price": "1250",
+        "date": "2026-09-14"
+    }
+]

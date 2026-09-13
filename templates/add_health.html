@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Health Record</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>💊 Add Health Record</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/health">Health</a>
+
+</nav>
+
+
+<main>
+
+    <div class="form-container">
+
+        <h2>Health Information</h2>
+
+        <form method="POST">
+
+            <label>Cow ID</label>
+
+            <select name="cow_id" required>
+
+                {% for cow in cows %}
+
+                <option value="{{ cow.id }}">
+
+                    {{ cow.id }} - {{ cow.name }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+
+            <label>Health Condition</label>
+
+            <select name="condition">
+
+                <option>Healthy</option>
+
+                <option>Needs Checkup</option>
+
+                <option>Under Treatment</option>
+
+            </select>
+
+
+            <label>Temperature (°C)</label>
+
+            <input
+                type="number"
+                step="0.1"
+                name="temperature"
+                required
+            >
+
+
+            <label>Treatment</label>
+
+            <input
+                type="text"
+                name="treatment"
+                placeholder="Enter treatment"
+            >
+
+
+            <label>Next Checkup</label>
+
+            <input
+                type="date"
+                name="next_checkup"
+            >
+
+
+            <button type="submit">
+                Save Health Record
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

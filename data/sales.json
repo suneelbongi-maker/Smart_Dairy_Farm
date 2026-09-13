@@ -1,0 +1,30 @@
+[
+    {
+        "customer_name": "Ramesh Dairy Shop",
+        "date": "2026-09-13",
+        "quantity": 30,
+        "price": 50,
+        "total": 1500
+    },
+    {
+        "customer_name": "Fresh Milk Center",
+        "date": "2026-09-13",
+        "quantity": 40,
+        "price": 50,
+        "total": 2000
+    },
+    {
+        "customer_name": "Healthy Foods Store",
+        "date": "2026-09-13",
+        "quantity": 25,
+        "price": 50,
+        "total": 1250
+    },
+    {
+        "customer_name": "City Supermarket",
+        "date": "2026-09-13",
+        "quantity": 30,
+        "price": 50,
+        "total": 1500
+    }
+]

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Dairy Farm</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="brand">
+            <div class="cow-logo">🐄</div>
+
+            <div>
+                <h1>Smart Dairy Farm</h1>
+                <p>Farm Management System</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            🌿 Healthy Cows &nbsp; | &nbsp;
+            🥛 Fresh Milk &nbsp; | &nbsp;
+            🌱 Better Tomorrow
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <a href="/" class="active">
+            🏠 Dashboard
+        </a>
+
+        <a href="/cows">
+            🐄 Cows
+        </a>
+
+        <a href="/milk">
+            🥛 Milk Production
+        </a>
+
+        <a href="/health">
+            ❤️ Health
+        </a>
+
+        <a href="/feed">
+            🌿 Feed
+        </a>
+
+        <a href="/sales">
+            💰 Sales
+        </a>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard">
+
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-card">
+
+            <div class="welcome-text">
+
+                <h2>
+                    🌱 Welcome to your Farm Dashboard 👋
+                </h2>
+
+                <p>
+                    Monitor your cows, milk production, health,
+                    feed and sales from one place.
+                </p>
+
+            </div>
+
+            <div class="welcome-cow">
+                🐄
+            </div>
+
+        </section>
+
+
+        <!-- FARM OVERVIEW -->
+        <section class="glass-section">
+
+            <h2 class="section-title">
+                📊 Farm Overview
+            </h2>
+
+            <div class="overview-grid">
+
+                <!-- TOTAL COWS -->
+                <div class="stat-card cows-card">
+
+                    <div class="stat-icon">
+                        🐄
+                    </div>
+
+                    <div>
+                        <h3>Total Cows</h3>
+
+                        <strong>
+                            {{ cows|length }}
+                        </strong>
+
+                        <p>Registered cows</p>
+                    </div>
+
+                </div>
+
+
+                <!-- TODAY MILK -->
+                <div class="stat-card milk-card">
+
+                    <div class="stat-icon">
+                        🥛
+                    </div>
+
+                    <div>
+                        <h3>Today's Milk</h3>
+
+                        <strong>
+                            {{ today_milk }} L
+                        </strong>
+
+                        <p>Total production</p>
+                    </div>
+
+                </div>
+
+
+                <!-- MILK SOLD -->
+                <div class="stat-card sales-card">
+
+                    <div class="stat-icon">
+                        🪙
+                    </div>
+
+                    <div>
+                        <h3>Milk Sold</h3>
+
+                        <strong>
+                            {{ milk_sold }} L
+                        </strong>
+
+                        <p>Today's sales</p>
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE -->
+                <div class="stat-card revenue-card">
+
+                    <div class="stat-icon">
+                        ₹
+                    </div>
+
+                    <div>
+                        <h3>Today's Revenue</h3>
+
+                        <strong>
+                            ₹{{ today_revenue }}
+                        </strong>
+
+                        <p>Total income</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HEALTH -->
+        <section class="glass-section">
+
+            <h2 class="section-title">
+                ❤️ Cow Health Status
+            </h2>
+
+            <div class="health-grid">
+
+                <div class="health-card healthy">
+
+                    <div class="health-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>{{ healthy }}</strong>
+                        <p>Healthy Cows</p>
+                    </div>
+
+                </div>
+
+
+                <div class="health-card checkup">
+
+                    <div class="health-icon">
+                        !
+                    </div>
+
+                    <div>
+                        <strong>{{ checkup }}</strong>
+                        <p>Need Checkup</p>
+                    </div>
+
+                </div>
+
+
+                <div class="health-card treatment">
+
+                    <div class="health-icon">
+                        ×
+                    </div>
+
+                    <div>
+                        <strong>{{ treatment }}</strong>
+                        <p>Under Treatment</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="glass-section">
+
+            <h2 class="section-title">
+                ⚡ Quick Actions
+            </h2>
+
+            <div class="actions-grid">
+
+
+                <a href="/add_cow" class="action-card">
+
+                    <div class="action-icon">
+                        🐄
+                    </div>
+
+                    <div>
+                        <h3>Add Cow</h3>
+                        <p>Register a new cow</p>
+                    </div>
+
+                    <span>›</span>
+
+                </a>
+
+
+                <a href="/add_milk" class="action-card">
+
+                    <div class="action-icon">
+                        🥛
+                    </div>
+
+                    <div>
+                        <h3>Add Milk</h3>
+                        <p>Record milk production</p>
+                    </div>
+
+                    <span>›</span>
+
+                </a>
+
+
+                <a href="/add_health" class="action-card">
+
+                    <div class="action-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+                        <h3>Health Record</h3>
+                        <p>Add health information</p>
+                    </div>
+
+                    <span>›</span>
+
+                </a>
+
+
+                <a href="/add_feed" class="action-card">
+
+                    <div class="action-icon">
+                        🌿
+                    </div>
+
+                    <div>
+                        <h3>Add Feed</h3>
+                        <p>Record feed stock</p>
+                    </div>
+
+                    <span>›</span>
+
+                </a>
+
+
+                <a href="/add_sales" class="action-card">
+
+                    <div class="action-icon">
+                        💰
+                    </div>
+
+                    <div>
+                        <h3>Add Sale</h3>
+                        <p>Record milk sale</p>
+                    </div>
+
+                    <span>›</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-cow">
+            🐄
+        </div>
+
+        <strong>
+            Smart Dairy Farm Management System
+        </strong>
+
+        <p>
+            Manage your farm smarter • Work better • Grow faster
+        </p>
+
+    </footer>
+
+</body>
+</html>

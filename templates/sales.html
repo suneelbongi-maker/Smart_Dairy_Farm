@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Milk Sales</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>💰 Milk Sales</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/cows">Cows</a>
+    <a href="/milk">Milk</a>
+    <a href="/health">Health</a>
+    <a href="/feed">Feed</a>
+    <a href="/sales">Sales</a>
+
+</nav>
+
+
+<main>
+
+    <div class="page-title">
+
+        <h2>Milk Sales Records</h2>
+
+        <a class="button" href="/add_sales">
+            + Add Sale
+        </a>
+
+    </div>
+
+
+    <table>
+
+        <tr>
+
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Quantity</th>
+            <th>Price/Litre</th>
+            <th>Total Amount</th>
+
+        </tr>
+
+
+        {% for item in sales %}
+
+        <tr>
+
+            <td>{{ item.customer }}</td>
+
+            <td>{{ item.date }}</td>
+
+            <td>{{ item.quantity }} L</td>
+
+            <td>₹{{ item.price }}</td>
+
+            <td>
+
+                <strong>
+                    ₹{{ item.amount }}
+                </strong>
+
+            </td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+            <td colspan="5">
+                No sales records found.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</main>
+
+</body>
+
+</html>

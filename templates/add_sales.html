@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Milk Sale</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>💰 Add Milk Sale</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/sales">Sales</a>
+
+</nav>
+
+
+<main>
+
+    <div class="form-container">
+
+        <h2>Sales Information</h2>
+
+        <form method="POST">
+
+            <label>Customer Name</label>
+
+            <input
+                type="text"
+                name="customer"
+                placeholder="Enter customer name"
+                required
+            >
+
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+
+            <label>Milk Quantity (Litres)</label>
+
+            <input
+                type="number"
+                step="0.1"
+                name="quantity"
+                required
+            >
+
+
+            <label>Price per Litre (₹)</label>
+
+            <input
+                type="number"
+                step="0.01"
+                name="price"
+                required
+            >
+
+
+            <button type="submit">
+                Save Sale
+            </button>
+
+        </form>
+
+        <p class="info">
+            Total amount = Milk Quantity × Price per Litre
+        </p>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

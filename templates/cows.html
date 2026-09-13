@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cow Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🐄 Cow Management</h1>
+
+</header>
+
+
+<nav>
+
+    <a href="/">Dashboard</a>
+    <a href="/cows">Cows</a>
+    <a href="/milk">Milk</a>
+    <a href="/health">Health</a>
+    <a href="/feed">Feed</a>
+    <a href="/sales">Sales</a>
+
+</nav>
+
+
+<main>
+
+    <div class="page-title">
+
+        <h2>All Cows</h2>
+
+        <a class="button" href="/add_cow">
+            + Add Cow
+        </a>
+
+    </div>
+
+
+    <form method="GET" class="search">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search cow..."
+            value="{{ search }}"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+
+    <table>
+
+        <tr>
+
+            <th>Cow ID</th>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Age</th>
+            <th>Health</th>
+            <th>Actions</th>
+
+        </tr>
+
+
+        {% for cow in cows %}
+
+        <tr>
+
+            <td>{{ cow.id }}</td>
+
+            <td>{{ cow.name }}</td>
+
+            <td>{{ cow.breed }}</td>
+
+            <td>{{ cow.age }}</td>
+
+            <td>{{ cow.health }}</td>
+
+            <td>
+
+                <a class="edit"
+                   href="/edit_cow/{{ cow.id }}">
+                    Edit
+                </a>
+
+                <a class="delete"
+                   href="/delete_cow/{{ cow.id }}">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+            <td colspan="6">
+                No cows found.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</main>
+
+</body>
+
+</html>
